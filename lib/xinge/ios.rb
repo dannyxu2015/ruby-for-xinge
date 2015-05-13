@@ -10,7 +10,7 @@ module Xinge
     end
 
     def push_to_single_device(token, title, content, params={}, custom_content={})
-      self.push_single_device(token, 1, build_simple_message(title, content, custom_content), params.merge({environment: ENV_VAL}))
+      self.push_single_device(token, 2, build_simple_message(title, content, custom_content), params.merge({environment: ENV_VAL}))
     end
 
     def push_to_all_device(title, content, params={}, custom_content={})
@@ -18,7 +18,7 @@ module Xinge
     end
 
     def push_to_single_account(account, title, content, params={}, custom_content={})
-      self.push_single_account(account, 1, build_simple_message(title, content, custom_content), params.merge({environment: ENV_VAL}))
+      self.push_single_account(account, 2, build_simple_message(title, content, custom_content), params.merge({environment: ENV_VAL}))
     end
 
     def push_to_tags_device(title, content, tags, params={}, custom_content={}, tag_op='OR')
