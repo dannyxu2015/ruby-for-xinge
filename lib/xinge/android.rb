@@ -25,8 +25,9 @@ module Xinge
 
     def build_simple_message(title, content, custom_content)
       {
-        title: title, content: content, vibrate: 1
-      }.merge(custom_content).to_json
+        title: title, content: content, vibrate: 1, 
+        custom_content: custom_content
+      }.to_json
     end
   end
 end
