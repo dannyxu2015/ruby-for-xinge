@@ -2,7 +2,7 @@ require 'xinge/base'
 module Xinge
   class Ios < Base
 
-    ENV_MAP = {'production' => 1, 'development' => 2}
+    ENV_MAP = {'production' => 1, 'development' => 2, 'staging' => 2}
     ENV_VAL = ENV_MAP[Xinge.config[:env]]
 
     def initialize(accessId = nil, secretKey = nil, options = {})
