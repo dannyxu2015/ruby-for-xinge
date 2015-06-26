@@ -143,9 +143,14 @@ module Xinge
       
       params.merge!({ sign: sign })
       options = { body: params }
-      
-      result = JSON.parse(self.class.send(HTTP_METHOD,self.get_request_url(type,method), options))
+      result = safe_json_parse(self.class.send(HTTP_METHOD,self.get_request_url(type,method), options))
       [result["ret_code"], result["err_msg"]]
+    end
+
+    def safe_json_parse(data)
+      JSON.parse(data)
+    rescue JSON::ParserError
+      {}
     end
 
     def get_request_url(type,method)
