@@ -144,6 +144,7 @@ module Xinge
       params.merge!({ sign: sign })
       options = { body: params }
       result = safe_json_parse(self.class.send(HTTP_METHOD,self.get_request_url(type,method), options))
+      logger.info '~~~~XG Message Result~~~~ ' + result.inspect
       [result["ret_code"], result["err_msg"]]
     end
 
