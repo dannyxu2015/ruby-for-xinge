@@ -11,7 +11,7 @@ module Xinge
 
     # send_time: 指定推送时间，格式为year-mon-day hour:min:sec 若小于服务器当前时间，则会立即推送
     def push_to_single_device(token, title, content, params={}, custom_content={}, send_time='')
-      self.push_single_device(token, 2, build_simple_message(title, content, custom_content), params.merge({environment: ENV_VAL, send_time: send_time}))
+      self.push_single_device(token, 0, build_simple_message(title, content, custom_content), params.merge({environment: ENV_VAL, send_time: send_time}))
     end
 
     def push_to_all_device(title, content, params={}, custom_content={}, send_time='')
