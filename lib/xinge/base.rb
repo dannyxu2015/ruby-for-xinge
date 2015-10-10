@@ -149,7 +149,8 @@ module Xinge
 
     def safe_json_parse(data)
       JSON.parse(data)
-    rescue JSON::ParserError
+    # rescue TypeError which will cause 'no implicit conversion of HTTParty::Response into String'
+    rescue JSON::ParserError, TypeError
       {}
     end
 
